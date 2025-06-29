@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jovaney Atef - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="light-mode">
+  <section class="hero">
+    <img src="jovaney.jpg" alt="Jovaney Atef" class="profile-pic" />
+    <h1>Jovaney Atef</h1>
+    <p>Programmer & Software Developer</p>
+    <div class="links">
+      <a href="mailto:jovaneyatef@gmail.com">jovaneyatef@gmail.com</a>
+      <a href="tel:01278290565">01278290565</a>
+      <a href="https://linkedin.com/in/jovaney-atef-35b4ab2a4">LinkedIn</a>
+    </div>
+  </section>
+
+  <section class="fade-in">
+
+    <div class="section-title">About Me</div>
+    <div class="card">
+      <p>A passionate and skilled Programmer and Software Developer with a strong foundation in software engineering
+        principles. Experienced in building efficient, scalable, and user-friendly applications using Python, Java, and
+        C++ with expertise in web development, database management, and software testing.</p>
+  </section>
+
+
+  <section class="fade-in">
+    <div class="section-title">Experience</div>
+    <div class="card">
+      <h3>Trainer, Hurghada International Airport</h3>
+      <p><em>August 2024 - September 2024</em></p>
+      <p>Completed 90 hours of training in the Communications & IT Department. Worked on network and security systems,
+        fire alarms, CCTV, biometric gates, and more.</p>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <div class="section-title">Education</div>
+    <div class="card">
+      <h3>Bachelor's in Information Technology</h3>
+      <p><em>Egyptian E-Learning University, Hurghada – 2025</em></p>
+      <p>Minor in Artificial Intelligence and Machine Learning</p>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <div class="section-title">Certifications</div>
+    <ul class="project-list">
+      <li>Device Configuration and Management – IT Specialist (2024)</li>
+      <li>Switching, Routing, and Wireless Essentials – CCNA (2023)</li>
+      <li>Introduction to Networks – CCNA (2022)</li>
+    </ul>
+  </section>
+
+  <section class="fade-in">
+    <div class="section-title">Projects</div>
+    <ul class="project-list">
+      <li><strong>DevSpot:</strong> A full-function website to upload and use developer projects with dashboard and
+        investment section.</li>
+      <li><strong>Sentiment Analysis System:</strong> Python GUI to analyze sentiment of text input (positive, negative,
+        neutral).</li>
+      <li><strong>Named Entity Recognition System:</strong> Extracts and displays types of words like names, locations,
+        and more from text.</li>
+      <li><strong>TicTacToe:</strong> A simple Python game with difficulty levels and multiplayer mode using Pygame.
+      </li>
+    </ul>
+  </section>
+
+  <section class="fade-in">
+    <div class="section-title">Skills</div>
+    <ul class="project-list">
+      <li><strong>Languages:</strong> Python, C++, Java, JavaScript, HTML, CSS</li>
+      <li><strong>Core Knowledge:</strong> Artificial Intelligence, Machine Learning</li>
+      <li><strong>Soft Skills:</strong> Communication, Adaptability, Fluent English Speaker</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Get In Touch</h2>
+    <p>Email: jovaneyatef@gmail.com | Phone: 01278290565</p>
+    <p><a href="https://linkedin.com/in/jovaney-atef-35b4ab2a4"
+        style="color: white; text-decoration: underline;">LinkedIn Profile</a></p>
+    <a href="resume.pdf" download class="download-btn">Download Resume</a>
+  </section>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    fadeEls.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(30px)';
+      observer.observe(el);
+    });
+
+    // Click spark effect
+    document.body.addEventListener('click', (e) => {
+      const spark = document.createElement('div');
+      spark.className = 'spark';
+      spark.style.left = `${e.clientX - 50}px`;
+      spark.style.top = `${e.clientY - 50}px`;
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 600);
+    });
+  </script>
+</body>
+
+</html>
